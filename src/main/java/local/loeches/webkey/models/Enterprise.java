@@ -6,14 +6,16 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
-class Enterprise {
+public class Enterprise {
 
     private @Id @GeneratedValue Long id;
     private String name;
     private String projectLeader;
 
+    public Enterprise() {
+    }
 
-    Enterprise(String name, String projectLeader)
+    public Enterprise(String name, String projectLeader)
     {
 
         this.name = name;
@@ -21,4 +23,27 @@ class Enterprise {
 
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getProjectLeader() {
+        return projectLeader;
+    }
+
+    public void setProjectLeader(String projectLeader) {
+        this.projectLeader = projectLeader;
+    }
 }
