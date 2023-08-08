@@ -36,6 +36,9 @@ public class EnterpriseService {
     }
     public ResponseEntity<List<Keypass>> getAllKeypassByEnterpriseId(long id){
         List<Keypass> keypasses=  keypassRepository.findByEnterpriseId(id);
+        keypasses.forEach(p->p.getEnterprise().getName());
+
+
         return new ResponseEntity<>(keypasses,HttpStatus.OK);
     }
     public ResponseEntity<Keypass> createKeypass(long id, Keypass keypassRequest){

@@ -12,20 +12,13 @@ public class Keypass {
     private Long id;
     private String username;
     private String password;
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "enterprise_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     private Enterprise enterprise;
 
 
-/*    public Keypass(Long id, String username, String password, Enterprise enterprise) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.enterprise = enterprise;
-    }
-*/
     public Long getId() {
         return id;
     }
